@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gift Box</title>
+  <link rel="stylesheet" href="styles.css">  
+</head>
+<body>
+
+<div class="present" id="giftBox">
+	<div class="cake">
+		<div class="plate"></div>
+		<div class="layer layer-1"></div>
+		<div class="layer layer-2"></div>
+		<div class="layer layer-top"></div>
+		<div class="layer layer-top-cream1"></div>
+		<div class="layer layer-top-cream2"></div>
+		<div class="layer candle"></div>
+	</div>
+	
+	<div class="rotate-container">
+		<div class="bottom"></div>
+		<div class="front"></div>
+		<div class="left"></div>
+		<div class="back"></div>
+		<div class="right"></div>
+		
+		<div class="lid">
+			<div class="lid-top"></div>
+			<div class="lid-front"></div>
+			<div class="lid-left"></div>
+			<div class="lid-back"></div>
+			<div class="lid-right"></div>
+		</div>
+	</div>
+</div>
+
+<canvas id="world"></canvas>
+
+<!-- Your additional content -->
+<div class="welcome-message">
+	<h1>Happy Birthday Doros</h1>
+	<p>The  candles on  your  cake,  a  number  obscene,<br>
+		But fear not, you're still a  knockout, I  mean!<br>
+		Another year  older, but  acting  like  a  teen!,<br>
+		Happy Birthday, my wife, the queen of the scene!.</p>
+	<img src="doros1.jpeg" alt="Image 1">
+    <img src="doros3.jpeg" alt="Image 2">
+    <img src="doros2.jpeg" alt="Image 3">
+</div>
+
+<script>
+    const giftBox = document.getElementById("giftBox");
+    const welcomeMessage = document.querySelector(".welcome-message");
+
+    giftBox.addEventListener("click", function() {
+        if (welcomeMessage.style.display === "none" || welcomeMessage.style.display === "") {
+            welcomeMessage.style.display = "block";
+        } else {
+            welcomeMessage.style.display = "none";
+        }
+    });
+
+    const images = document.querySelectorAll(".welcome-message img");
+    images.forEach(img => {
+        img.style.display = "none";
+    });
+
+    giftBox.addEventListener("click", function() {
+        images.forEach(img => {
+            if (img.style.display === "none" || img.style.display === "") {
+                img.style.display = "block";
+            } else {
+                img.style.display = "none";
+            }
+        });
+    });
+</script>
+
+
+<script src="script.js"></script>
+</body>
+</html>
